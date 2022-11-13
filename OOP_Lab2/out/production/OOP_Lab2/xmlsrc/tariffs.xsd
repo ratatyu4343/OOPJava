@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Tariff">
+    <xs:complexType>
+        <xs:sequence>
+          <xs:element name="TariffItem" maxOccurs="unbounded" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element type="xs:float" name="payroll"/>
+                <xs:element type="xs:float" name="callin"/>
+                <xs:element type="xs:float" name="callout"/>
+                <xs:element type="xs:float" name="callhome"/>
+                <xs:element type="xs:float" name="sms"/>
+                <xs:element type="xs:float" name="likenum"/>
+                <xs:element type="xs:float" name="tarif12"/>
+                <xs:element type="xs:float" name="tarif60"/>
+                <xs:element type="xs:float" name="startcost"/>
+              </xs:sequence>
+              <xs:attribute type="xs:ID" name="id"/>
+              <xs:attribute type="xs:string" name="name"/>
+              <xs:attribute type="xs:string" name="oname"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
