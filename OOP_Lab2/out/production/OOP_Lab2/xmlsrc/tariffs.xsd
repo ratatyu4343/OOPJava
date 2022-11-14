@@ -6,15 +6,15 @@
           <xs:element name="TariffItem" maxOccurs="unbounded" minOccurs="0">
             <xs:complexType>
               <xs:sequence>
-                <xs:element type="xs:float" name="payroll"/>
-                <xs:element type="xs:float" name="callin"/>
-                <xs:element type="xs:float" name="callout"/>
-                <xs:element type="xs:float" name="callhome"/>
-                <xs:element type="xs:float" name="sms"/>
-                <xs:element type="xs:float" name="likenum"/>
-                <xs:element type="xs:float" name="tarif12"/>
-                <xs:element type="xs:float" name="tarif60"/>
-                <xs:element type="xs:float" name="startcost"/>
+                <xs:element type="MyFLOAT" name="payroll"/>
+                <xs:element type="MyFLOAT" name="callin"/>
+                <xs:element type="MyFLOAT" name="callout"/>
+                <xs:element type="MyFLOAT" name="callhome"/>
+                <xs:element type="MyFLOAT" name="sms"/>
+                <xs:element type="MyFLOAT" name="likenum"/>
+                <xs:element type="MyFLOAT" name="tarif12"/>
+                <xs:element type="MyFLOAT" name="tarif60"/>
+                <xs:element type="MyFLOAT" name="startcost"/>
               </xs:sequence>
               <xs:attribute type="xs:ID" name="id"/>
               <xs:attribute type="xs:string" name="name"/>
@@ -24,4 +24,10 @@
         </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:simpleType name="MyFLOAT">
+    <xs:restriction base="xs:float">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>

@@ -1,7 +1,9 @@
 package xmlreader;
 
+import org.xml.sax.SAXException;
 import tariff.Tariff;
 
+import javax.xml.XMLConstants;
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -9,7 +11,13 @@ import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +26,13 @@ public class XMLParser {
     public XMLParser(String path) {
         this.path = path;
     }
-    public List<Tariff> readXML() {
+    public List<Tariff> readXML(String xsdPath) throws Exception {
         List<Tariff> tariffs = null;
+        try {
+            validateXML(xsdPath);
+        } catch (Exception e) {
+            throw e;
+        }
         XMLInputFactory factory = XMLInputFactory.newInstance();
         try {
             XMLEventReader reader = factory.createXMLEventReader(new FileInputStream(path));
@@ -70,5 +83,11 @@ public class XMLParser {
             e.printStackTrace();
         }
         return tariffs;
+    }
+    private void validateXML(String xsdPath) throws SAXException, IOException {
+        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Schema schema = schemaFactory.newSchema(new File(xsdPath));
+        Validator validator = schema.newValidator();
+        validator.validate(new StreamSource(new File(path)));
     }
 }
