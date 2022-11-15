@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Tariff>
+    <TariffItem id="id1" name="C" oname="Life">
+        <payroll>-31.5111</payroll>
+        <callin>555.5</callin>
+        <callout>5</callout>
+        <callhome>1</callhome>
+        <sms>1.5E-4</sms>
+        <likenum>1.5</likenum>
+        <tarif12>1.5</tarif12>
+        <tarif60>1.5</tarif60>
+        <startcost>1.5</startcost>
+    </TariffItem>
+    <TariffItem id="id2" name="C" oname="Li33fe">
+        <payroll>21.5111</payroll>
+        <callin>555.5</callin>
+        <callout>5</callout>
+        <callhome>1</callhome>
+        <sms>1.5E-4</sms>
+        <likenum>1.5</likenum>
+        <tarif12>111.5</tarif12>
+        <tarif60>1.5</tarif60>
+        <startcost>1.5</startcost>
+    </TariffItem>
+    <TariffItem id="id5" name="A" oname="Li3242443fe">
+        <payroll>1.22222</payroll>
+        <callin>555.5</callin>
+        <callout>5</callout>
+        <callhome>1</callhome>
+        <sms>1.5E-4</sms>
+        <likenum>1.5</likenum>
+        <tarif12>1.5</tarif12>
+        <tarif60>1.5</tarif60>
+        <startcost>1.5</startcost>
+    </TariffItem>
+</Tariff>
