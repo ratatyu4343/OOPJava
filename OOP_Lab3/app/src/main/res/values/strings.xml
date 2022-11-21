@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OOP_Lab3</string>
+    <string name="dtw">DTW алгоритм відстеження переміщення телефона</string>
+    <string name="xLable">X: </string>
+    <string name="yLable">Y: </string>
+    <string name="zLable">Z: </string>
+</resources>
